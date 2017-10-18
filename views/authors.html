@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        body {
+          padding-top: 50px;
+        }
+        footer {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        .input-large {
+          width: 350px;
+        }
+        /*
+         * Off Canvas
+         * --------------------------------------------------
+         */
+        @media screen and (max-width: 768px) {
+          .row-offcanvas {
+            position: relative;
+            -webkit-transition: all 0.25s ease-out;
+            -moz-transition: all 0.25s ease-out;
+            transition: all 0.25s ease-out;
+            background:#ecf0f1;
+          }
+
+          .row-offcanvas-left
+          .sidebar-offcanvas {
+            left: -40%;
+          }
+
+          .row-offcanvas-left.active {
+            left: 40%;
+          }
+
+          .sidebar-offcanvas {
+            position: absolute;
+            top: 0;
+            width: 40%;
+            margin-left: 12px;
+          }
+        }
+
+        #sidebar {
+            padding:15px;
+            margin-top:10px;
+        }
+        .carousel .item {
+          height: 300px;
+        }
+        .list-group-item {
+          border: none;
+          padding: 0px 15px 0px 10px
+        }
+        #authors_area {
+          margin-top: 10px;
+          margin-left: 20px;
+          margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+            margin-left: 45px;
+        }
+        .letter {
+            cursor: pointer;
+            color: blue;
+        }
+        </style>
+
+  </head>
+
+  <body>
+
+
+<div class="container">
+
+  <div id="authors_area" >
+    <span class="letter" id="a">A</span>
+    <span class="letter" id="b">B</span>
+    <span class="letter" id="c">C</span>
+    <span class="letter" id="d">D</span>
+    <span class="letter" id="e">E</span>
+    <span class="letter" id="f">F</span>
+    <span class="letter" id="g">G</span>
+    <span class="letter" id="h">H</span>
+    <span class="letter" id="i">I</span>
+    <span class="letter" id="j">J</span>
+    <span class="letter" id="k">K</span>
+    <span class="letter" id="l">L</span>
+    <span class="letter" id="m">M</span>
+    <span class="letter" id="n">N</span>
+    <span class="letter" id="o">O</span>
+    <span class="letter" id="p">P</span>
+    <span class="letter" id="q">Q</span>
+    <span class="letter" id="r">R</span>
+    <span class="letter" id="s">S</span>
+    <span class="letter" id="t">T</span>
+    <span class="letter" id="u">U</span>
+    <span class="letter" id="v">V</span>
+    <span class="letter" id="w">W</span>
+    <span class="letter" id="x">X</span>
+    <span class="letter" id="y">Y</span>
+    <span class="letter" id="z">Z</span>
+  </div>
+
+  <input type="text" class="input-large" id="name" />
+  <br/><br/>
+
+  <ul id="area_a" class="list-group row" style=display:none>
+       <li class="list-group-item col-xs-3"><a href="edwinabbott.html">Edwin Abbott</a></li>
+       <li class="list-group-item col-xs-3"><a href="koboabe.html">Kobo Abe</a></li>
+       <li class="list-group-item col-xs-3"><a href="pierreabelard.html">Pierre Abelard</a></li>
+       <li class="list-group-item col-xs-3"><a href="walterabish.html">Walter Abish</a></li>
+       <li class="list-group-item col-xs-3"><a href="chinuaachebe.html">Chinua Achebe</a></li>
+       <li class="list-group-item col-xs-3"><a href="kathyacker.html">Kathy Acker</a></li>
+       <li class="list-group-item col-xs-3"><a href="josedeacosta.html">José de Acosta</a></li>
+       <li class="list-group-item col-xs-3"><a href="douglasadams.html">Douglas Adams</a></li>
+       <li class="list-group-item col-xs-3"><a href="henryadams.html">Henry Adams</a></li>
+       <li class="list-group-item col-xs-3"><a href="richardadams.html">Richard Adams</a></li>
+       <li class="list-group-item col-xs-3"><a href="chimamandangoziadichie.html">Chimamanda Ngozi Adichie</a></li>
+  </ul>
+
+  <ul id="area_g" class="list-group row" style=display:none>
+       <li class="list-group-item col-xs-2"><a href="abhinavagupta .html">Abhinava Gupta </a></li>
+  </ul>
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+<script>
+
+    $('.letter').click(function () {
+      var area = '#area_' + $(this).attr('id');
+      $(area).toggle();
+    });
+
+    $('#name').keypress(function (e) {
+      if (e.keyCode == 13) {
+        var name = $('#name').val().trim();
+        var link = name.toLowerCase();
+        link = link.replace(/ /i, '');
+
+        $('#name').val('<li class="list-group-item col-xs-2"><a href="' + link + '.html">' + name + '</a></li>');
+      }
+    });
+
+</script>

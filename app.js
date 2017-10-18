@@ -9,8 +9,8 @@ var db = mongojs('writings', ['authors']);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'images')));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'authors')));
+app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.static(path.join(__dirname, 'views/authors/a')));
 
 axios.get('https://api.github.com/users/codeheaven-io');
 
@@ -72,18 +72,18 @@ app.post('/saveAuthor', (req, res) => {
 
 });
 
-app.get('/authors',function(req,res){
-  console.log('Authors called');
-
-  db.authors.find().toArray(function(err, docs) {
-      res.writeHead(200, {'Content-Type': 'text/json'});
-      var json = JSON.stringify({
-        Authors: docs
-      });
-      res.end(json);
-  });
-
-});
+// app.get('/authors',function(req,res){
+//   console.log('Authors called');
+//
+//   db.authors.find().toArray(function(err, docs) {
+//       res.writeHead(200, {'Content-Type': 'text/json'});
+//       var json = JSON.stringify({
+//         Authors: docs
+//       });
+//       res.end(json);
+//   });
+//
+// });
 
 app.get('/getAuthor/:id', function(req,res){
   console.log('Get Author called');
