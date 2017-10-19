@@ -15,13 +15,57 @@
       body {
         padding-top: 50px;
       }
+      .list-group-item {
+        border: none;
+        padding: 0px 15px 0px 10px
+      }
+      .letter {
+          cursor: pointer;
+          color: blue;
+      }
     </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="#">Frognall</a>
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
   
+<div class="container">
+
+  <ul id="area_a" class="list-group row">
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Buying Checklist</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Periodicals</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Book Stores</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Book Sellers</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Book Towns</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Events/Fairs</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Auctions</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Book Clubs</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Reprint Houses</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Collecting</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Autographs</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Inscriptions</span></li>
+       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">First Edition Identification</span></li>
+  </ul>
+
+  <ul id="buying_checklist" style="display:none">
+    <li>Does it have a remainder mark?</li>
+    <li>Is it a book club edition?</li>
+  </ul>
+
 https://101books.net/the-list/
 <li><a href="http://estc.bl.uk" target="_blank">English Short Title Catalog</a></li>
 <li><a href="http://www.ustc.ac.uk" target="_blank">Universal Short Title Catalog</a></li>
@@ -142,6 +186,12 @@ http://www.rarebookhub.com/
 </html>
 
 <script>
+
+  $('#buying_checklist_link').click( function() {
+    $('#buying_checklist').toggle();
+  })
+
+
 
   $('#jacket_header').click( function() {
     $('#jacket_condition').toggle();

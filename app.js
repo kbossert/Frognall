@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'images')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'views/authors/a')));
+app.use(express.static(path.join(__dirname, '/')));
 
 axios.get('https://api.github.com/users/codeheaven-io');
 
