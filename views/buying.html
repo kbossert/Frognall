@@ -11,10 +11,41 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-     <style>
-      body {
-        padding-top: 50px;
-      }
+  <style>
+     body {
+       padding-top: 50px;
+     }
+     @media screen and (max-width: 768px) {
+       .row-offcanvas {
+         position: relative;
+         -webkit-transition: all 0.25s ease-out;
+         -moz-transition: all 0.25s ease-out;
+         transition: all 0.25s ease-out;
+         background:#ecf0f1;
+       }
+
+       .row-offcanvas-left
+       .sidebar-offcanvas {
+         left: -40%;
+       }
+
+       .row-offcanvas-left.active {
+         left: 40%;
+       }
+
+       .sidebar-offcanvas {
+         position: absolute;
+         top: 0;
+         width: 40%;
+         margin-left: 12px;
+       }
+     }
+
+     #sidebar {
+         padding:15px;
+         margin-top:10px;
+     }
+
       .list-group-item {
         border: none;
         padding: 0px 15px 0px 10px
@@ -23,7 +54,18 @@
           cursor: pointer;
           color: blue;
       }
+
+      #links_area {
+        margin-top: 20px;
+        margin-left: 0px;
+        margin-bottom: 20px;
+      }
+      li {
+        list-style: none;
+        cursor: pointer;
+      }
     </style>
+
 </head>
 
 <body>
@@ -31,145 +73,162 @@
   <div class="navbar navbar-fixed-top navbar-default" role="navigation">
       <div class="container-fluid">
           <div class="navbar-header">
-              <a class="navbar-brand" href="#">Frognall</a>
+              <a class="navbar-brand" href="index.html">Frognall</a>
           </div>
           <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home</a></li>
+                  <li class="active"><a href="index.html">Home</a></li>
                   <li><a href="#about">About</a></li>
                   <li><a href="#contact">Contact</a></li>
               </ul>
           </div>
       </div>
   </div>
-  
-<div class="container">
 
-  <ul id="area_a" class="list-group row">
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Buying Checklist</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Periodicals</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Book Stores</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Book Sellers</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Book Towns</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Events/Fairs</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Auctions</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Book Clubs</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Reprint Houses</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Collecting</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Autographs</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Inscriptions</span></li>
-       <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">First Edition Identification</span></li>
-  </ul>
+  <div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+            <div class="sidebar-nav">
+                <ul class="nav">
+                    <li class="active"><a href="authors.html">Authors</a></li>
+                    <li><a href="buying.html">Buying</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="repair.html">Repair</a></li>
+                    <li><a href="industry.html">Industry</a></li>
+                </ul>
+            </div>
+        </div>
 
-  <ul id="buying_checklist" style="display:none">
-    <li>Does it have a remainder mark?</li>
-    <li>Is it a book club edition?</li>
-  </ul>
+        <div class="col-xs-12 col-sm-9">
 
-https://101books.net/the-list/
-<li><a href="http://estc.bl.uk" target="_blank">English Short Title Catalog</a></li>
-<li><a href="http://www.ustc.ac.uk" target="_blank">Universal Short Title Catalog</a></li>
+        <ul id="links_area" class="list-group row">
+             <li class="list-group-item col-xs-3"><span class="letter" id="buying_checklist_link">Buying Checklist</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="periodicals_link">Periodicals</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="bookstores_link">Book Stores</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="booksellers_link">Book Sellers</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="booktowns_link">Book Towns</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="events_link">Events/Fairs</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="auctions_link">Auctions</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="bookclubs_link">Book Clubs</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="reprinthouses_link">Reprint Houses</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="collecting_link">Collecting</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="autographs_link">Autographs</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="inscriptions_link">Inscriptions</span></li>
+             <li class="list-group-item col-xs-3"><span class="letter" id="firsteditions_link">First Edition Identification</span></li>
+        </ul>
 
-https://wiganlanebooks.co.uk/
-https://wiganlanebooks.co.uk/blog/interesting/10-of-the-oldest-known-surviving-books-in-the-world/
+        <ul id="buying_checklist" style="display:none">
+          <li id="exlibrary_link_alt">Ex Library/Ex Libris</li>
+          <li id="remainders_link_alt">Remainder Mark</li>
+          <li id="bookclubs_link_alt">Book Club</li>
+          <li id="firsteditions_link_alt">Edition</li>
+          <li id="jacket_header">Dust Jacket Condition</li>
+          <ul id="jacket_condition" style="display:none">
+            <li>Tears</li>
+            <li>Sunned</li>
+            <li>Chipped</li>
+            <li>Price Clipped</li>
+            <li>Writing/Marks</li>
+            <li>Folds/Creases</li>
+            <li>Repairs/Tape</li>
+            <li>Stains</li>
+            <li>Stickers (including the seller's)</li>
+          </ul>
+          <li id="exterior_header">Book Exterior</li>
+          <ul id="exterior" style="display:none">
+            <li>Bowed</li>
+            <li>Cocked/Slanted</li>
+            <li>Loose Binding/Shaken</li>
+            <li>Chipped</li>
+            <li>Bumps/Dents</li>
+            <li>Stained</li>
+            <li>Faded</li>
+            <li>Worn Edges</li>
+            <li>Headband Wear</li>
+              <li>Rebacked</li>
+              <li>Recased</li>
+          </ul>
+          <li id="interior_header">Book Interior</li>
+          <ul id="interior" style="display:none">
+            <li>Tears</li>
+            <li>Bookplate</li>
+            <li>Flyleaf Writing</li>
+            <li>Foxing</li>
+            <li>Bug Damage/Wormholes</li>
+            <li>Mold</li>
+            <li>Writing/Marks/Stamps</li>
+            <li>Folds/Creases</li>
+            <li>Repairs/Tape</li>
+            <li>Stains</li>
+            <li>Missing Pages</li>
+          </ul>
+        </ul>
 
-https://www.mysteriousbookshop.com/
-http://www.rarebookhub.com/
+        <ul id="exlibrary" style="display:none">
+          <li><a href="https://www.youtube.com/watch?v=dSeUnTsvydw" target="_blank">Ex Library vs. Ex Libris</a></li>
+          <li><a href="http://www.ioba.org/pages/resources/library-markings/" target="_blank">Library Markings</a></li>
+          <li><a href="http://www.ioba.org/pages/resources/library-bindings/" target="_blank">Library Bindings</a></li>
+        </ul>
 
-<h1>Before You Buy</h1>
+        <ul id="remainders" style="display:none">
+          <li><a href="http://www.ebay.com/gds/Remainder-Marks-on-Books-Part-1-/10000000177801941/g.html" target="_blank">Remainder Mark</a></li>
+        </ul>
 
-<ul>
+        <ul id="periodicals" style="display:none">
+          <li>Periodicals</li>
+        </ul>
 
-<li>First Edition</li>
-<ul>
+        <ul id="bookstores" style="display:none">
+          <li>Book Stores</li>
+          https://wiganlanebooks.co.uk/
+          https://www.mysteriousbookshop.com/
+        </ul>
 
-<li><a href="https://www.abebooks.com/books/rarebooks/Avid-Collector/Sep06/first-editions-1.shtml" target="_blank">Abe</a></li>
-<li><a href="https://www.qbbooks.com/first_ed_pub.php" target="_blank">Quill and Brush</a></li>
-<li><a href="https://www.theawl.com/2011/02/how-to-spot-a-first-edition/" target="_blank">Awl</a></li>
-<li><a href="https://blog.bookstellyouwhy.com/bid/255746/How-to-Identify-Random-House-First-Editions" target="_blank">Random House Identification</a></li>
-<li><a href="https://www.abaa.org/blog/post/identifying-first-editions" target="_blank">ABAA</a></li>
-<li><a href="http://www.ioba.org/pages/resources/first-edition-publishers/" target="_blank">IOBA</a></li>
+        <ul id="firsteditions" style="display:none">
+          <li><a href="https://www.abebooks.com/books/rarebooks/Avid-Collector/Sep06/first-editions-1.shtml" target="_blank">Abe</a></li>
+          <li><a href="https://www.qbbooks.com/first_ed_pub.php" target="_blank">Quill and Brush</a></li>
+          <li><a href="https://www.theawl.com/2011/02/how-to-spot-a-first-edition/" target="_blank">Awl</a></li>
+          <li><a href="https://blog.bookstellyouwhy.com/bid/255746/How-to-Identify-Random-House-First-Editions" target="_blank">Random House Identification</a></li>
+          <li><a href="https://www.abaa.org/blog/post/identifying-first-editions" target="_blank">ABAA</a></li>
+          <li><a href="http://www.ioba.org/pages/resources/first-edition-publishers/" target="_blank">IOBA</a></li>
+        </ul>
 
-</ul>
-<li><a href="bookclub" target="_blank">Book Club/Reprint</a></li>
-<ul>
-<li><a href="http://www.bookthink.com/0170/170gad1.htm">BookThink Grosset & Dunlap</a></li>
-<li><a href="http://www.bookthink.com/0005/05bce.htm">BookThink Book Club Editions</a></li>
+        <ul id="bookclubs" style="display:none">
+          <li><a href="http://www.bookthink.com/0170/170gad1.htm">BookThink Grosset & Dunlap</a></li>
+          <li><a href="http://www.bookthink.com/0005/05bce.htm">BookThink Book Club Editions</a></li>
+        </ul>
 
-<h2>Reprint Publishers</h2>
-
-<div style="width:600px;">
-<ul class="multicolumn" style="list-style: none;">
-<li>A.L. Burt</li>
-<li>Altermus</li>
-<li>Avenel</li>
-<li>Blakiston</li>
-<li>Blue Ribbon Books</li>
-<li>Blue Star</li>
-<li>Bracken Books</li>
-<li>Cassel</li>
-<li>Collier</li>
-<li>Cupples & Leon</li>
-<li>Dial</li>
-<li>Dover</li>
-<li>Greenwich House</li>
-<li>Fiction Library</li>
-<li>Goldsmith</li>
-<li>Grosset & Dunlap</li>
-<li>Hurst</li>
-<li>Little Blue Books</li>
-<li>Modern Library</li>
-<li>Reader's Digest</li>
-<li>Saalfield</li>
-<li>Sears</li>
-<li>Street and Smith</li>
-<li>Sun Dial</li>
-<li>Tower</li>
-<li>Triangle</li>
-</ul>
-</div>
-<li><a href="http://www.ebay.com/gds/Remainder-Marks-on-Books-Part-2-/10000000177802667/g.html" target="_blank">Remainder Marks</a></li>
-<li>Ex Library</li>
-<li id="jacket_header" style="color:orange">Dust Jacket Condition</li>
-<ul id="jacket_condition" style="display:none">
-  <li>Tears</li>
-  <li>Sunned</li>
-  <li>Chipped</li>
-  <li>Price Clipped</li>
-  <li>Writing/Marks</li>
-  <li>Folds/Creases</li>
-  <li>Repairs/Tape</li>
-  <li>Stains</li>
-  <li>Stickers (including the seller's)</li>
-</ul>
-<li id="exterior_header" style="color:orange">Book Exterior</li>
-<ul id="exterior" style="display:none">
-  <li>Bowed</li>
-  <li>Cocked/Slanted</li>
-  <li>Loose Binding/Shaken</li>
-  <li>Chipped</li>
-  <li>Bumps/Dents</li>
-  <li>Stained</li>
-  <li>Faded</li>
-  <li>Worn Edges</li>
-  <li>Headband Wear</li>
-    <li>Rebacked</li>
-    <li>Recased</li>
-</ul>
-<li id="interior_header" style="color:orange">Book Interior</li>
-<ul id="interior" style="display:none">
-  <li>Tears</li>
-  <li>Bookplate</li>
-  <li>Flyleaf Writing</li>
-  <li>Foxing</li>
-  <li>Bug Damage/Wormholes</li>
-  <li>Mold</li>
-  <li>Writing/Marks/Stamps</li>
-  <li>Folds/Creases</li>
-  <li>Repairs/Tape</li>
-  <li>Stains</li>
-  <li>Missing Pages</li>
-</ul>
+        <ul id="reprinthouses" style="display:none">
+          <li>A.L. Burt</li>
+          <li>Altermus</li>
+          <li>Avenel</li>
+          <li>Blakiston</li>
+          <li>Blue Ribbon Books</li>
+          <li>Blue Star</li>
+          <li>Bracken Books</li>
+          <li>Cassel</li>
+          <li>Collier</li>
+          <li>Cupples & Leon</li>
+          <li>Dial</li>
+          <li>Dover</li>
+          <li>Greenwich House</li>
+          <li>Fiction Library</li>
+          <li>Goldsmith</li>
+          <li>Grosset & Dunlap</li>
+          <li>Hurst</li>
+          <li>Little Blue Books</li>
+          <li>Modern Library</li>
+          <li>Reader's Digest</li>
+          <li>Saalfield</li>
+          <li>Sears</li>
+          <li>Street and Smith</li>
+          <li>Sun Dial</li>
+          <li>Tower</li>
+          <li>Triangle</li>
+      </div>
+    </div>
 
 </div>
 
@@ -187,10 +246,26 @@ http://www.rarebookhub.com/
 
 <script>
 
-  $('#buying_checklist_link').click( function() {
-    $('#buying_checklist').toggle();
+  $('.letter').click( function() {
+    var area = '#' + $(this).attr('id').substring(0, $(this).attr('id').length - 5);
+    $(area).toggle();
   })
 
+  $('#exlibrary_link_alt').click( function() {
+    $('#exlibrary').toggle();
+  })
+
+  $('#remainders_link_alt').click( function() {
+    $('#remainders').toggle();
+  })
+
+  $('#bookclubs_link_alt').click( function() {
+    $('#bookclubs').toggle();
+  })
+
+  $('#firsteditions_link_alt').click( function() {
+    $('#firsteditions').toggle();
+  })
 
 
   $('#jacket_header').click( function() {

@@ -15,17 +15,9 @@
         body {
           padding-top: 50px;
         }
-        footer {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
         .input-large {
           width: 350px;
         }
-        /*
-         * Off Canvas
-         * --------------------------------------------------
-         */
         @media screen and (max-width: 768px) {
           .row-offcanvas {
             position: relative;
@@ -56,16 +48,12 @@
             padding:15px;
             margin-top:10px;
         }
-        .carousel .item {
-          height: 300px;
-        }
         .list-group-item {
           border: none;
           padding: 0px 15px 0px 10px
         }
         #authors_area {
           margin-top: 10px;
-          margin-left: 20px;
           margin-bottom: 20px;
         }
         .hidden {
@@ -80,9 +68,9 @@
 
   </head>
 
-  <body>
+<body>
 
-    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+<div class="navbar navbar-fixed-top navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">Frognall</a>
@@ -95,9 +83,25 @@
                 </ul>
             </div>
         </div>
-    </div>
+  </div>
 
-<div class="container">
+  <div class="container-fluid">
+      <div class="row row-offcanvas row-offcanvas-left">
+          <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+              <div class="sidebar-nav">
+                  <ul class="nav">
+                      <li class="active"><a href="authors.html">Authors</a></li>
+                      <li><a href="buying.html">Buying</a></li>
+                      <li><a href="history.html">History</a></li>
+                      <li><a href="media.html">Media</a></li>
+                      <li><a href="terms.html">Terms</a></li>
+                      <li><a href="repair.html">Repair</a></li>
+                      <li><a href="industry.html">Industry</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-9">
 
   <div id="authors_area" >
     <span class="letter" id="a">A</span>
@@ -149,7 +153,7 @@
        <li class="list-group-item col-xs-2"><a href="abhinavagupta .html">Abhinava Gupta </a></li>
   </ul>
 
-</div>
+</div></div></div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
