@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <style>
+      .generation_output {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        display: block;
+      }
+      .generate_button {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        display: block;
+      }
+    </style>
+  </head>
+
+<body>
+
+  <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">Frognall</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+      </div>
+  </div>
+
+  <div class="container-fluid">
+      <div class="row row-offcanvas row-offcanvas-left">
+
+          <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+              <div class="sidebar-nav">
+                  <ul class="nav">
+                      <li class="active"><a href="authors.html">Authors</a></li>
+                      <li><a href="buying.html">Buying</a></li>
+                      <li><a href="history.html">History</a></li>
+                      <li><a href="media.html">Media</a></li>
+                      <li><a href="terms.html">Terms</a></li>
+                      <li><a href="repair.html">Repair</a></li>
+                      <li><a href="industry.html">Industry</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-9">
+
+            <div class="spaced_area">
+              <div class="overtag">Author</div>
+              <input type="text" class="input-large" id="name" /></br>
+              <button type="button" class="generate_button" id="generate_author" >Generate Author</button>
+              <span class="generation_output" id="author_output"></span>
+            </div>
+
+            <div class="spaced_area">
+              <div class="overtag">Work</div>
+              <input type="text" class="input-large" id="work" /></br>
+              <button type="button" class="generate_button" id="generate_work" >Generate Work</button>
+              <span class="generation_output" id="work_output"></span>
+            </div>
+
+            <div class="spaced_area">
+              <div class="overtag">Edition</div>
+              <tag>Year</tag> <input type="text" id="year" /></br>
+              <tag>Publisher</tag> <input type="text" class="input-large" id="publisher" /></br>
+              <tag>City</tag> <input type="text" class="input-large" id="city" /></br>
+              <tag>Notes</tag> <input type="text" class="input-large" id="notes" /></br>
+              <tag>Cost</tag> <input type="text" class="input-large" id="cost" /></br>
+              <tag>Image</tag> <input type="text" class="input-large" id="image" /></br>
+
+              <button type="button" class="generate_button" id="generate_edition" >Generate Edition</button>
+              <span class="generation_output" id="edition_output"></span>
+            </div>
+
+          </div>
+
+        </div>
+
+  </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+<script>
+
+    $('#generate_author').click(function (e) {
+        var name = $('#name').val().trim();
+        var link = name.toLowerCase();
+        while (link.search(' ') !== -1) {
+          link = link.replace(/ /i, '');
+        }
+
+        $('#author_output').text('<li class="list-group-item col-xs-3"><a href="' + link + '.html">' + name + '</a></li>');
+    });
+
+    $('#generate_work').click(function (e) {
+        var name = $('#work').val().trim();
+        $('#work_output').text('<br/><i class="work" id="work_X">' + name + '</i>');
+    });
+
+    $('#generate_edition').click(function (e) {
+        var html = '<tr>';
+        html = html + '<td>' + $('#year').val().trim() + '</td>';
+        html = html + '<td>' + $('#publisher').val().trim() + '</td>';
+        html = html + '<td>' + $('#city').val().trim() + '</td>';
+        html = html + '<td>' + $('#notes').val().trim() + '</td>';
+        html = html + '<td>' + $('#cost').val().trim() + '</td>';
+
+        var image = "";
+        if ($('#image').val().length > 0) {
+          image = '<a href="' + $('#image').val() + '" target="_blank"><img src="' + $('#image').val() + '" height="40" alt="" /></a>';
+        }
+        html = html + '<td>' + image + '</td>';
+
+        html = html + '</tr>';
+
+        $('#edition_output').text(html);
+    });
+
+</script>

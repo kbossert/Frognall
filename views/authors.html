@@ -11,82 +11,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <style>
-        body {
-          padding-top: 50px;
-        }
-        .input-large {
-          width: 350px;
-        }
-        @media screen and (max-width: 768px) {
-          .row-offcanvas {
-            position: relative;
-            -webkit-transition: all 0.25s ease-out;
-            -moz-transition: all 0.25s ease-out;
-            transition: all 0.25s ease-out;
-            background:#ecf0f1;
-          }
-
-          .row-offcanvas-left
-          .sidebar-offcanvas {
-            left: -40%;
-          }
-
-          .row-offcanvas-left.active {
-            left: 40%;
-          }
-
-          .sidebar-offcanvas {
-            position: absolute;
-            top: 0;
-            width: 40%;
-            margin-left: 12px;
-          }
-        }
-
-        #sidebar {
-            padding:15px;
-            margin-top:10px;
-        }
-        .list-group-item {
-          border: none;
-          padding: 0px 15px 0px 10px
-        }
-        #authors_area {
-          margin-top: 10px;
-          margin-bottom: 20px;
-        }
-        .hidden {
-            display: none;
-            margin-left: 45px;
-        }
-        .letter {
-            cursor: pointer;
-            color: blue;
-        }
-        </style>
-
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
 
 <body>
 
-<div class="navbar navbar-fixed-top navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Frognall</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
+  <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">Frognall</a>
         </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+      </div>
   </div>
 
   <div class="container-fluid">
       <div class="row row-offcanvas row-offcanvas-left">
+
           <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
               <div class="sidebar-nav">
                   <ul class="nav">
@@ -132,9 +79,6 @@
     <span class="letter" id="z">Z</span>
   </div>
 
-  <input type="text" class="input-large" id="name" />
-  <br/><br/>
-
   <ul id="area_a" class="list-group row" style=display:none>
        <li class="list-group-item col-xs-3"><a href="edwinabbott.html">Edwin Abbott</a></li>
        <li class="list-group-item col-xs-3"><a href="koboabe.html">Kobo Abe</a></li>
@@ -147,6 +91,37 @@
        <li class="list-group-item col-xs-3"><a href="henryadams.html">Henry Adams</a></li>
        <li class="list-group-item col-xs-3"><a href="richardadams.html">Richard Adams</a></li>
        <li class="list-group-item col-xs-3"><a href="chimamandangoziadichie.html">Chimamanda Ngozi Adichie</a></li>
+       <li class="list-group-item col-xs-3"><a href="mortimeradler.html">Mortimer Adler</a></li>
+       <li class="list-group-item col-xs-3"><a href="aeschines.html">Aeschines</a></li>
+       <li class="list-group-item col-xs-3"><a href="aeschylus.html">Aeschylus</a></li>
+       <li class="list-group-item col-xs-3"><a href="louisagassiz.html">Louis Agassiz</a></li>
+       <li class="list-group-item col-xs-3"><a href="jamesagee.html">James Agee</a></li>
+       <li class="list-group-item col-xs-3"><a href="shaiagnon.html">Shai Agnon</a></li>
+       <li class="list-group-item col-xs-3"><a href="conradaiken.html">Conrad Aiken</a></li>
+       <li class="list-group-item col-xs-3"><a href="annaakhmatova.html">Anna Akhmatova</a></li>
+       <li class="list-group-item col-xs-3"><a href="walteralvarez.html">Walter Alvarez</a></li>
+       <li class="list-group-item col-xs-3"><a href="sergeyaksakov.html">Sergey Aksakov</a></li>
+       <li class="list-group-item col-xs-3"><a href="ryunosukeakutagawa.html">Ryunosuke Akutagawa</a></li>
+       <li class="list-group-item col-xs-3"><a href="alain-fournier.html">Alain-Fournier</a></li>
+       <li class="list-group-item col-xs-3"><a href="edwardalbee.html">Edward Albee</a></li>
+       <li class="list-group-item col-xs-3"><a href="milleroalbert.html">Miller O Albert</a></li>
+       <li class="list-group-item col-xs-3"><a href="mitchalbom.html">Mitch Albom</a></li>
+       <li class="list-group-item col-xs-3"><a href="louisamayalcott.html">Louisa May Alcott</a></li>
+       <li class="list-group-item col-xs-3"><a href="sholemaleichem.html">Sholem Aleichem</a></li>
+       <li class="list-group-item col-xs-3"><a href="christopheralexander.html">Christopher Alexander</a></li>
+       <li class="list-group-item col-xs-3"><a href="horatioalger.html">Horatio Alger</a></li>
+       <li class="list-group-item col-xs-3"><a href="vittorioalfieri.html">Vittorio Alfieri</a></li>
+       <li class="list-group-item col-xs-3"><a href="nelsonalgren.html">Nelson Algren</a></li>
+       <li class="list-group-item col-xs-3"><a href="fredericklewisallen.html">Frederick Lewis Allen</a></li>
+       <li class="list-group-item col-xs-3"><a href="isabelallende.html">Isabel Allende</a></li>
+       <li class="list-group-item col-xs-3"><a href="janealison.html">Jane Alison</a></li>
+       <li class="list-group-item col-xs-3"><a href="dorothyallison.html">Dorothy Allison</a></li>
+  </ul>
+
+  <ul id="area_c" class="list-group row" style=display:none>
+       <li class="list-group-item col-xs-2"><a href="giacomocasanova.html">Giacomo Casanova</a></li>
+       <li class="list-group-item col-xs-2"><a href="adolfocasares.html">Adolfo Bioy Casares</a></li>
+       <li class="list-group-item col-xs-2"><a href="fernaolopescastanheda.html">Fernão Lopes de Castanheda</a></li>
   </ul>
 
   <ul id="area_g" class="list-group row" style=display:none>
@@ -172,16 +147,6 @@
     $('.letter').click(function () {
       var area = '#area_' + $(this).attr('id');
       $(area).toggle();
-    });
-
-    $('#name').keypress(function (e) {
-      if (e.keyCode == 13) {
-        var name = $('#name').val().trim();
-        var link = name.toLowerCase();
-        link = link.replace(/ /i, '');
-
-        $('#name').val('<li class="list-group-item col-xs-2"><a href="' + link + '.html">' + name + '</a></li>');
-      }
     });
 
 </script>

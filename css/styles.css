@@ -1,0 +1,76 @@
+body {
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    background:#ecf0f1;
+  }
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+      left: -40%;
+  }
+  .row-offcanvas-left.active {
+      left: 40%;
+  }
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 40%;
+    margin-left: 12px;
+  }
+}
+
+#sidebar {
+  padding:15px;
+}
+
+.carousel .item {
+  height: 300px;
+}
+
+.input-large {
+  width: 350px;
+}
+
+.list-group-item {
+  border: none;
+  padding: 0px 15px 0px 10px
+}
+
+#authors_area {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.spaced_area {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+  margin-left: 45px;
+}
+
+.letter {
+  cursor: pointer;
+  color: blue;
+}
+
+.overtag {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+tag {
+  display:inline-block;
+  width:75px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
