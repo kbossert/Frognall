@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="index.html">Frognall</a>
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+          </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+          <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+              <div class="sidebar-nav">
+                  <ul class="nav">
+                      <li class="active"><a href="authors.html">Authors</a></li>
+                      <li><a href="buying.html">Buying</a></li>
+                      <li><a href="history.html">History</a></li>
+                      <li><a href="media.html">Media</a></li>
+                      <li><a href="terms.html">Terms</a></li>
+                      <li><a href="repair.html">Repair</a></li>
+                      <li><a href="industry.html">Industry</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-9">
+
+              <h3>Catullus</h3>
+              <p>Roman. 84–54 BC</p>
+              <p>Influential Latin poet known for neoteric (non-epic) poetry.  Lots and lots of editions of his works.</p>
+              <p><a href="https://en.wikipedia.org/wiki/Catullus" target="_blank">wikipedia</a></p>
+              <p class="abe"><a href="https://www.abebooks.com/servlet/SearchResults?an=Catullus&bi=h&bx=off&cm_sp=SearchF-_-Advtab1-_-Results&ds=30&recentlyadded=all&sortby=1&sts=t&xpod=on" target="_blank">abebooks</a></p>
+              <b>Works</b>
+              <div>
+                <br/>
+                <i class="work" id="work_1">Catullus, Tibullus, and Propertius</i>
+                <div class="table-responsive" id="area_work_1" style="display:none">
+
+                        <table class="table table-striped">
+                          <thead>
+                            <tr><th>Year</th><th>Publisher</th><th>City</th><th>Notes</th><th>Very Good</th><th></th></tr>
+                          </thead>
+                          <tbody>
+                            <tr><td>1481</td><td>Albertus de Mazalibus and Prosper Odoardus</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>1534</td><td>Lugduni (Lione), apud Seb. Gryphiu</td><td></td><td></td><td></td><td></td></tr>
+                          </tbody>
+                        </table>
+
+                      </div>
+                <br/>
+                <br/>
+                <i class="work" id="work_2">The Carmina of Caius Valerius Catullus</i>
+                <div class="table-responsive" id="area_work_2" style="display:none">
+
+                        <table class="table table-striped">
+                          <thead>
+                            <tr><th>Year</th><th>Publisher</th><th>City</th><th>Notes</th><th>Very Good</th><th></th></tr>
+                          </thead>
+                          <tbody>
+                            <tr><td>1894</td><td>Printed for the Translators</td><td>London</td><td>Richard Burton was one of the translators</td><td></td><td><a href="Burton_Catullisl.jpg" target="_blank"><img src="Burton_Catullisl.jpg" height="40" alt="" /></a></td></tr>
+                          </tbody>
+                        </table>
+
+                      </div>
+                <br/>
+              </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>
+
+<script>
+
+    $('.work').click(function () {
+      var area = '#area_' + $(this).attr('id');
+      $(area).toggle();
+    });
+
+</script>

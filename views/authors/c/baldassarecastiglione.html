@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="index.html">Frognall</a>
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+          </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+          <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+              <div class="sidebar-nav">
+                  <ul class="nav">
+                      <li class="active"><a href="authors.html">Authors</a></li>
+                      <li><a href="buying.html">Buying</a></li>
+                      <li><a href="history.html">History</a></li>
+                      <li><a href="media.html">Media</a></li>
+                      <li><a href="terms.html">Terms</a></li>
+                      <li><a href="repair.html">Repair</a></li>
+                      <li><a href="industry.html">Industry</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-9">
+
+              <h3>Baldassare Castiglione</h3>
+              <p>Italian. 1478–1529</p>
+              <p><a href="https://en.wikipedia.org/wiki/Baldassare_Castiglione" target="_blank">wikipedia</a></p>
+              <b>Works</b>
+              <div>
+                <br/>
+                <i class="work" id="work_1">Il Libro del Cortegiano (The Book of the Courtier)</i>
+                <div class="table-responsive" id="area_work_1" style="display:none">
+
+                        <table class="table table-striped">
+                          <thead>
+                            <tr><th>Year</th><th>Publisher</th><th>City</th><th>Notes</th><th>Very Good</th><th></th></tr>
+                          </thead>
+                          <tbody>
+                            <tr><td>1528</td><td>Aldine Press</td><td>Venice</td><td></td><td></td><td></td></tr>
+                            <tr><td>1538</td><td>Vettor de Rabani</td><td>Venice</td><td></td><td></td><td></td></tr>
+                            <tr><td>1545</td><td>Figlioli di Aldo</td><td>Venice</td><td></td><td></td><td><a href="CourtierChildrenofAldo.jpg" target="_blank"><img src="CourtierChildrenofAldo.jpg" height="40" alt="" /></td></tr>
+                            <tr><td>1556</td><td>Gabriel Giolitto de' Ferrari</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>1561</td><td></td><td></td><td>First English edition</td><td></td><td></td></tr>
+                            <tr><td>1733</td><td>Giuseppe Comino</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>1766</td><td>Giuseppe Comino</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>1771</td><td>Vendramini Mosca</td><td>Venice</td><td></td><td></td><td></td></tr>
+                          </tbody>
+                        </table>
+
+                          <p><a href="https://en.wikipedia.org/wiki/The_Book_of_the_Courtier" target="_blank">wikipedia</a></p>
+                          <p class="abe"><a href="https://www.abebooks.com/servlet/SearchResults?an=Baldassare+Castiglione&bi=h&bx=off&cm_sp=SearchF-_-Advtab1-_-Results&ds=30&recentlyadded=all&sortby=1&sts=t&xpod=on" target="_blank">abebooks</a></p>
+                      </div>
+                <br/>
+              </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>
+
+<script>
+
+    $('.work').click(function () {
+      var area = '#area_' + $(this).attr('id');
+      $(area).toggle();
+    });
+
+</script>
