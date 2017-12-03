@@ -79,6 +79,15 @@ tag {
   margin-bottom: 5px;
 }
 
-.work {
+.work{
     cursor: pointer;
+}
+
+.author_name{
+    cursor: pointer;
+    color: blue;
+}
+
+.spaced_span {
+  margin-right: 25px;
 }

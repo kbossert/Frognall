@@ -1,3 +1,5 @@
+
+// #region Requires
 var express = require("express");
 var app     = express();
 var path    = require("path");
@@ -5,7 +7,9 @@ var axios    = require("axios");
 var bodyParser = require('body-parser');
 var mongojs = require('mongojs');
 var db = mongojs('writings', ['authors']);
+// #endregion
 
+// #region Setup
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'images')));
@@ -15,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'views/authors/c')));
 app.use(express.static(path.join(__dirname, '/')));
 
 axios.get('https://api.github.com/users/codeheaven-io');
+// #endregion
 
 app.get('/', (req, res) => {
   // __dirname is the directory that contains the JavaScript source code.
@@ -57,8 +62,11 @@ app.post('/saveAuthor', (req, res) => {
    {
       Name: req.body.author.Name,
       Nationality: req.body.author.Nationality,
-      Bio: req.body.author.Bio,
-      Notes: req.body.author.Notes
+      Years: req.body.author.Years,
+      Tags: req.body.author.Tags,
+      Group: req.body.author.Group,
+      Notes: req.body.author.Notes,
+      External: req.body.author.External
    },
    { upsert: true },
    function(err, result) {
@@ -74,32 +82,43 @@ app.post('/saveAuthor', (req, res) => {
 
 });
 
-// app.get('/authors',function(req,res){
-//   console.log('Authors called');
-//
-//   db.authors.find().toArray(function(err, docs) {
-//       res.writeHead(200, {'Content-Type': 'text/json'});
-//       var json = JSON.stringify({
-//         Authors: docs
-//       });
-//       res.end(json);
-//   });
-//
-// });
+app.get('/getAuthorsByLetter/:id', function(req,res) {
 
-app.get('/getAuthor/:id', function(req,res){
-  console.log('Get Author called');
-  // console.log(req.params.id);
-  // req.query.color to get a named parameter in the ?color=red format
+  console.log('getAuthorsByLetter called');
 
-  var query = { Name: new RegExp(req.params.id) };
+
+
+  var query = { Group: new RegExp(req.params.id, 'i') };
+  // var query = { Name: new RegExp(req.params.id) };
   console.log(query);
 
   db.authors.find(query).toArray(function(err, docs) {
       res.writeHead(200, {'Content-Type': 'text/json'});
+
+      var json = JSON.stringify({
+        Authors: docs
+      });
+
+      res.end(json);
+  });
+
+});
+
+app.get('/getAuthor/:id', function(req,res) {
+
+  console.log('getAuthor called');
+
+  var query = { Name: new RegExp(req.params.id, 'i') };
+  // var query = { Name: new RegExp(req.params.id) };
+  console.log(query);
+
+  db.authors.find(query).toArray(function(err, docs) {
+      res.writeHead(200, {'Content-Type': 'text/json'});
+
       var json = JSON.stringify({
         Author: docs[0]
       });
+
       res.end(json);
   });
 
@@ -155,9 +174,26 @@ app.post('/saveTitle', (req, res) => {
 
 });
 
+// #region Listen
 app.listen(3000);
 
 console.log('Server running at http://127.0.0.1:3000');
+// #endregion
+
+// #region Archive
+
+// app.get('/authors',function(req,res){
+//   console.log('Authors called');
+//
+//   db.authors.find().toArray(function(err, docs) {
+//       res.writeHead(200, {'Content-Type': 'text/json'});
+//       var json = JSON.stringify({
+//         Authors: docs
+//       });
+//       res.end(json);
+//   });
+//
+// });
 
 // ES 6
 // app.get('/', (req, res) => {
@@ -190,3 +226,5 @@ console.log('Server running at http://127.0.0.1:3000');
   //     console.log('saved to database');
   //   }
   // });
+
+// #endregion
